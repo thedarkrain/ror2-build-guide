@@ -1,0 +1,28 @@
+// Dependency-free DOM-less interaction smoke test of the client-side planner.
+const events={};
+const root={innerHTML:'',addEventListener:(name,fn)=>events[name]=fn,querySelectorAll:()=>[]};
+const saved={};
+globalThis.localStorage={getItem:k=>saved[k]||null,setItem:(k,v)=>saved[k]=v};
+globalThis.location={hash:'#builds'};
+globalThis.history={replaceState(){}};
+globalThis.document={getElementById:()=>root,activeElement:null};
+globalThis.window={scrollY:0,scrollTo(){},addEventListener(){}};
+await import('../src/app.js');
+const ok=(check,text)=>{if(!check)throw new Error('Smoke test failed: '+text)};
+const click=(dataset)=>events.click({target:{closest:()=>({dataset})}});
+ok(root.innerHTML.includes('Acrid build laboratory'),'default Acrid view');
+ok((root.innerHTML.match(/class="priority-row/g)||[]).length===8,'8 prioritized real items');
+ok((root.innerHTML.match(/data-action="preset"/g)||[]).length===4,'4 separate Acrid build paths');
+click({action:'preset',index:'1'});
+ok(root.innerHTML.includes('Blight cloud brawler'),'preset switching');
+ok(root.innerHTML.includes('Cloying Breath'),'skill preset changing');
+click({action:'add-core'});
+ok(root.innerHTML.includes('inventory-item'),'adding build core items');
+click({action:'pick-survivor',id:'enforcer'});
+ok(root.innerHTML.includes('Enforcer build laboratory'),'switching survivors');
+ok((root.innerHTML.match(/data-action="preset"/g)||[]).length===4,'4 Enforcer build paths');
+click({go:'hallowed'});
+ok(root.innerHTML.includes('14 HEXES'),'hallowed guide');
+click({go:'learn'});
+ok(root.innerHTML.includes('The survival handbook'),'beginner academy');
+console.log('Interactive app smoke test passed (build selection, core inventory, survivor switching, DLC guide and academy)');

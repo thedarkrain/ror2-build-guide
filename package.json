@@ -1,0 +1,17 @@
+{
+  "name": "ror2-field-manual",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Fan-made Risk of Rain 2 beginner guide, codex and build planner",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/dev.mjs dist",
+    "check": "node scripts/check.mjs",
+    "smoke": "node scripts/smoke.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
