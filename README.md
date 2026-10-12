@@ -4,6 +4,29 @@
 
 This is a **fan project**, not affiliated with Hopoo Games, Gearbox, 2K, wiki.gg, or Risk of Rain 2's developers. Game names, art and trademarks belong to their respective owners.
 
+## Homepage redesign — full promotional poster and official expansion covers (October 2026)
+
+The homepage now replaces the old overlapping survivor collage with a **complete Risk of Rain 2 promotional poster**, supplied by the project owner and stored locally in `public/images/risk-of-rain-2-promo.webp`. The original poster composition is retained and its surrounding whitespace is trimmed for a cleaner responsive layout.
+
+The main page now shows **five illustrated edition cards**: the base game and four DLCs. Each one includes its official Steam cover image, a short overview, standout features, and **clickable survivor portraits** that jump straight into their builds. All **11 regular base-game survivors** are listed, while secret **Heretic** is explained separately. The expansion additions are Railgunner and Void Fiend; Seeker, CHEF, and False Son; Operator and Drifter; and Enforcer and Acolyte.
+
+Official cover image links use Steam's public artwork CDN and are **not bundled**. Wiki.gg remains the source for survivor portraits, skills, item icons and mechanics. If remote images fail to load, cards show a labeled text fallback. The full-size poster is local and does not depend on an external host. Internet access is needed for official DLC covers and wiki portraits.
+
+**To update your existing Vercel site:** extract this ZIP, replace the files inside your local `ror2-field-manual` folder without deleting `.git` or `.vercel`, then run:
+
+```powershell
+npm run check
+npm run smoke
+npm run build
+git add .
+git commit -m "Redesign homepage with full game and DLC artwork"
+git push origin main
+```
+
+If your Vercel project has automatic Git deployments enabled, that `git push` triggers a new build. Otherwise run `npx vercel@latest --prod` after the build.
+
+**Review note:** This environment validated all generated image URLs, the local hero asset, DOM layout at 1440, 900 and 390-pixel widths (zero horizontal overflow), 21 survivor records, 65 builds, and standard interaction smoke tests; it could not fetch and visually confirm each remote Steam/wiki image because outbound image access was blocked here.
+
 ## Highlights
 
 | Section | Contents |
