@@ -28,4 +28,7 @@ assert(client.includes('all-survivor-grid') && client.includes('skill-option-mai
 assert(!client.includes('id=\"build-survivor\"'), 'Survivor dropdown unexpectedly present');
 assert(!client.includes('const RAW'), 'Wiki-only asset source expected');
 assert(readFileSync('src/app.js','utf8').includes('imageSources'),'Missing real image source logic');
+assert(client.includes('https://riskofrain2.wiki.gg/images/'), 'Game media must hotlink directly to wiki.gg images');
+assert(client.includes('thumb/${encoded}/128px-${encoded}'), 'Wiki thumbnail source pattern missing');
+assert(!client.includes('localArt['), 'Build must not depend on a downloaded image cache');
 console.log(`Validated ${d.survivors.length} survivors and ${count} build paths; ${d.items.length} curated base items, ${d.hallowed.length} Hallowed, ${d.hexes.length} Hex, ${d.pages.length} rituals.`);

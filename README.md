@@ -14,7 +14,9 @@ This is a **fan project**, not affiliated with Hopoo Games, Gearbox, 2K, wiki.gg
 | **Items** | Searchable codex of curated regular items plus 11 Hallowed items, with rarities, explanations and links to detailed wiki pages. |
 | **Hallowed Concepts** | All 14 Hexes, 11 Hallowed rewards, cleanse-trade explainer and interactive risk selector. |
 | **N'tormat** | Seven usable ritual pages, usage tips and a simulated per-stage charge reset (not an actual gameplay engine). |
-| **DLC & Bosses** | Base game and four DLC summaries, ending paths, notable bosses and Karma overview. |
+| **Bosses, trials & places** | Illustrated boss cards, directions, rewards, 20 destination cards and all 9 Winnowing trial challenges with wiki links. |
+| **Proc Guide** | Coaching for all 21 survivors, verified coefficients on known abilities and an interactive Tri-Tip bleed-chance example. |
+| **Skill deep dives** | Selected abilities display proc data, important notes, image, and build item synergies. Some wiki tables are incomplete for the newest skills. |
 | **Glossary** | Plain-language explanations of combat mechanics and terms. |
 
 **Important distinction:** Mechanics are explained using wiki information. The build priorities, suggestions and target stacks are **editorial recommendations**, **not verified global optima**. Some new October 2026 Hallowed Concepts interactions are still being documented. Check individual wiki pages for exact numbers and patches.
@@ -51,7 +53,7 @@ The `dist/` directory contains the static deployable website.
    git add .
    git commit -m "Initial Petrichor Field Manual"
    git branch -M main
-   git remote add origin https://github.com/YOUR_USERNAME/ror2-field-manual.git
+   git remote add origin https://github.com/thedarkrain/ror2-build-guide.git
    git push -u origin main
    ```
 
@@ -63,11 +65,15 @@ Vercel automatically redeploys on subsequent pushes.
 
 ## Wiki image sources and limitations
 
-The UI uses **real Risk of Rain 2 wiki file redirects** for survivor portraits, skills, items, Hexes, Hallowed items, and N’tormat pages. It does **not** substitute AI-generated artwork, emoji, or third-party re-creations. Images are shown next to both skill names and item names; skill options are selectable illustrated cards instead of dropdown menus.
+The interface **hotlinks wiki-hosted images** for survivor portraits, individual skills, items, Hexes, Hallowed items and N’tormat pages. It uses the wiki's direct thumbnail format:
 
-**Optional local image cache for Vercel:** If the wiki permits your intended reuse, run `npm run assets:sync` on a computer with internet access. This queries the wiki's file API, downloads available wiki artwork into `public/assets/wiki/`, and updates `src/data/local-art.json`. Commit both to GitHub so Vercel serves the images directly without relying on wiki.gg hotlinks. Only successfully resolved wiki files are downloaded; new/missing icons still use the remote wiki links. The optional synchronization was not run in this sandbox because external downloads are unavailable.
+```text
+https://riskofrain2.wiki.gg/images/thumb/Infusion.png/128px-Infusion.png
+```
 
-**Network requirement:** Artwork is referenced from `https://riskofrain2.wiki.gg/wiki/Special:Redirect/file/<name>.png` (with fallback wiki redirect variants). Images are **not bundled** in this ZIP; the browser downloads them from wiki.gg. Some very new DLC files may have different names or be missing, and wiki.gg may block hotlinking on some networks. In that case, the card displays a legible text fallback and an adjacent wiki source link for abilities. We could not independently test all wiki URLs from this sandbox; do not assume every image works before checking your deployed site.
+The code creates these URLs from wiki filenames in `src/app.js` (`imageSources`), with alternate sizes and original-file URLs as fallbacks. There is **no image downloading or asset-sync command**. Images are loaded by the visitor's browser from `riskofrain2.wiki.gg`.
+
+Some new DLC artwork may use a different file name or be temporarily unavailable. In these cases the interface shows a short text fallback. This environment could check the URL pattern but could **not** load and verify every remote image. Because hotlink availability depends on wiki.gg, keep its terms and image copyright in mind.
 
 The project includes beginner-friendly editorial ability notes in `src/data/skill-notes.js`; check the wiki link for precise cooldowns, damage values, and unlock requirements. We verified the survivor roster and specific Operator ability names against the wiki.
 
@@ -131,3 +137,33 @@ Text is an independently written, simplified guide. It does **not** republish th
 ## License
 
 The original website **source code** in this repository is MIT-licensed; see `LICENSE`. That license does **not** apply to any external game assets, trademarks, wiki content, or third-party repositories.
+
+
+## Wiki artwork hotlinking
+
+Game art is **not downloaded or stored in this repository**. Images load from `https://riskofrain2.wiki.gg/images/thumb/<filename>/128px-<filename>` (with larger-size/original fallbacks). Browsers need access to wiki.gg, and new image filenames may require maintaining the mapping in `src/app.js` (`imageSources`). Hotlink availability is controlled by the wiki, not Vercel. If an image is missing, the UI displays initials rather than showing a broken-image icon.
+
+Run `npm run check && npm run smoke && npm run build` to validate locally, then push to GitHub; Vercel can automatically redeploy.
+
+
+## October 2026 illustrated encounters and proc optimization update
+
+The build lab includes a **Proc Optimization** panel for each of the 65 build presets.
+It updates when the survivor, build and chosen abilities change. The new **Proc Guide** shows coaching cards for the complete 21-survivor roster, and a calculator demonstrates how Tri-Tip Dagger's bleed chance changes with **proc coefficient**, individual hit, and item stacks. For multi-hit skills, it deliberately reports a **per-hit** value rather than incorrectly multiplying it by the number of projectiles. Crit chance does not scale with proc coefficient.
+
+**Bosses & places** now covers 11 notable fights, 20 stages / realms / destinations, and all nine N'kuhana trial objectives across Predation, Mortality and Survival. Cards link to relevant wiki pages with detailed mechanics. Wiki images remain remote and may fail on some networks; image-file availability varies, so the app retains labeled fallbacks.
+
+### Deploy this update directly
+
+In PowerShell, from the directory containing `package.json`:
+
+```powershell
+npm run check
+npm run smoke
+npm run build
+npx vercel@latest --prod
+```
+
+If the Vercel project is already connected to GitHub, you can instead push to `main`.
+
+**References:** [Proc Coefficient](https://riskofrain2.wiki.gg/wiki/Proc_Coefficient), [Engineer skills](https://riskofrain2.wiki.gg/wiki/Engineer), [N'kuhana Trials](https://riskofrain2.wiki.gg/wiki/N%27kuhana_Trials), [Environments](https://riskofrain2.wiki.gg/wiki/Map), [Soulbound Threshold](https://riskofrain2.wiki.gg/wiki/Soulbound_Threshold), and the relevant character, boss and stage pages linked from each card. These are wiki-informed editorial summaries, **not copies of entire wiki articles**.
