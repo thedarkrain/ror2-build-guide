@@ -17,7 +17,7 @@ This is a **fan project**, not affiliated with Hopoo Games, Gearbox, 2K, wiki.gg
 | **Bosses, trials & places** | Illustrated boss cards, directions, rewards, 20 destination cards and all 9 Winnowing trial challenges with wiki links. |
 | **Proc Guide** | Coaching for all 21 survivors, verified coefficients on known abilities and an interactive Tri-Tip bleed-chance example. |
 | **Skill deep dives** | Selected abilities display proc data, important notes, image, and build item synergies. Some wiki tables are incomplete for the newest skills. |
-| **Glossary** | Plain-language explanations of combat mechanics and terms. |
+| **Inline Field Notes** | Hover, focus or tap unfamiliar terms on game pages to open a small explanation; also searchable in the Glossary. Covers Corruption, proc coefficient, item stacking, defense, boss and DLC mechanics. |
 
 **Important distinction:** Mechanics are explained using wiki information. The build priorities, suggestions and target stacks are **editorial recommendations**, **not verified global optima**. Some new October 2026 Hallowed Concepts interactions are still being documented. Check individual wiki pages for exact numbers and patches.
 
@@ -167,3 +167,12 @@ npx vercel@latest --prod
 If the Vercel project is already connected to GitHub, you can instead push to `main`.
 
 **References:** [Proc Coefficient](https://riskofrain2.wiki.gg/wiki/Proc_Coefficient), [Engineer skills](https://riskofrain2.wiki.gg/wiki/Engineer), [N'kuhana Trials](https://riskofrain2.wiki.gg/wiki/N%27kuhana_Trials), [Environments](https://riskofrain2.wiki.gg/wiki/Map), [Soulbound Threshold](https://riskofrain2.wiki.gg/wiki/Soulbound_Threshold), and the relevant character, boss and stage pages linked from each card. These are wiki-informed editorial summaries, **not copies of entire wiki articles**.
+
+
+## Reworked homepage + beginner definitions
+
+The homepage now presents the base game and **all four expansions** with expansion rosters and links into playable survivor builds, plus a guided three-step entry for newcomers. The visual direction draws inspiration from the game's science-fiction atmosphere but uses original layout and CSS, not an official branded template.
+
+**Field Notes glossary:** Hover a gold dotted term on desktop, press Tab and Enter on a focusable term, or tap it on mobile to see a brief beginner-friendly explanation. Close a pinned definition with Esc or by tapping elsewhere. Read or expand definitions in the Glossary navigation page. The explanatory content lives in `src/data/terms.js`; use this list to expand the vocabulary. **Void Fiend** has a visible Controlled-vs-Corrupted walkthrough, with example meter states, health costs, +100 armor and practical skill explanations. This illustrative meter is not connected to the game.
+
+All survivor build paths and boss/DLC guides remain present in the update. Images continue to use wiki-hosted direct URLs, and require access to wiki.gg when a visitor loads the page.

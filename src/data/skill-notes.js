@@ -1,5 +1,15 @@
 // Short newcomer explanations of skill mechanics. For exact figures and unlock requirements see the linked wiki page.
 export const skillNotes = {
+  'Soul Spiral':'Manifest orbiting spirit orbs; repeated hits grant barrier, and full orb stacks can empower the ability.',
+  'Reprieve':'Take flight and generate barrier; losing it or hitting a target creates a cyclone that can heal teammates and damage enemies.',
+  'Palm Blast':'Charge a piercing, powerful hand that can heal teammates and build Tranquility through multiple hits.',
+  'Lunar Stakes':'Throw piercing stakes that call delayed Lunar Lightning and inflict Lunar Ruin; each stake counts as two Spikes.',
+  "Meridian's Will":'Teleport, pull enemies with a blast, and temporarily amplify False Son’s passive Growth effects.',
+  'Ice Box':'Throw frost-infused ice cubes to freeze or slow enemies instead of applying Sear burn.',
+  'Oil Spill':'Twirl upward and slam down repeatedly, coating the battlefield in combustible Oil.',
+  'Yes, CHEF!':'Blast enemies with Ignite or Frost and empower the next skill.',
+  'Resupply Beacon':'Captain’s alternate supply beacon recharges equipment on interaction, up to a limited number of uses.',
+
   'Poison':'Adds a powerful, nonlethal damage-over-time effect; excellent on high-health enemies.',
   'Blight':'Replaces Poison with stackable damage over time that can finish enemies.',
   'Vicious Wounds':'Melee claw combo; every third hit is stronger and restores some health.',

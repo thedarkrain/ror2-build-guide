@@ -2486,7 +2486,8 @@
             0,
             0,
             0,
-            1
+            1,
+            0
           ],
           "how": "Hold Power Mode with nailguns to fire rapidly and stack missiles and bleed.",
           "risk": "Staying stationary makes incoming attacks more dangerous.",
@@ -2540,9 +2541,9 @@
           "difficulty": "Easy"
         },
         {
-          "title": "Rebar sniper",
+          "title": "Double Rebar sniper",
           "style": "RANGED BURST",
-          "desc": "Heavy Rebar hits pair well with Crowbar and ice/fire bands.",
+          "desc": "Select Rebar Puncher in BOTH primary slots with Retool to alternate piercing, high-damage shots. Works with Crowbar and bands.",
           "items": [
             "Crowbar",
             "Kjaro's Band",
@@ -2554,12 +2555,13 @@
             "Earthbound Vessel"
           ],
           "skillChoices": [
-            3,
+            1,
+            0,
             0,
             0,
             1
           ],
-          "how": "Use Power-Saw near targets for sustained melee hits, then escape before they surround you.",
+          "how": "Equip Rebar Puncher in both weapon slots, shoot one, hit Retool after the shot, and repeat to bypass the long natural firing cadence.",
           "risk": "You need more defensive items than a ranged build.",
           "core": [
             "Crowbar",
@@ -2630,13 +2632,14 @@
             "Transport Mode",
             "Retool"
           ],
-          "how": "Line up piercing shots through crowds and finish bosses with bands.",
+          "how": "Equip Rebar Puncher and Scrap Launcher with Retool; switch between long-range piercing and explosive group clearing.",
           "risk": "Slower shooting makes some on-hit items less effective.",
           "skillChoices": [
             1,
             0,
             0,
-            0
+            0,
+            2
           ],
           "core": [
             "Crowbar",
@@ -2704,6 +2707,12 @@
         [
           "Retool",
           "Power Mode"
+        ],
+        [
+          "Auto-Nailgun",
+          "Rebar Puncher",
+          "Scrap Launcher",
+          "Power-Saw"
         ]
       ]
     },
@@ -4182,7 +4191,8 @@
         [
           "Hacking Beacon",
           "Healing Beacon",
-          "Shock Beacon"
+          "Shock Beacon",
+          "Resupply Beacon"
         ]
       ]
     },
@@ -4443,7 +4453,7 @@
         {
           "title": "Corrupted beam shredder",
           "style": "BOSS MELTER",
-          "desc": "Stay alive while using your high-rate corrupted attack.",
+          "desc": "Build for the close-range corrupted beam: crits and Void items support Corruption uptime; attack speed multiplies beam ticks. Be mindful that healing reduces Corruption.",
           "items": [
             "Soldier's Syringe",
             "Lens-Maker's Glasses",
@@ -4460,7 +4470,7 @@
             0,
             0
           ],
-          "how": "Play from a distance and choose healing when you need to reduce corruption.",
+          "how": "Fight at range in controlled form, build Corruption with crits, then position within 40m for the powerful corrupted beam. Dodge danger with Corrupted Trespass and choose when to spend Corrupted Suppress.",
           "risk": "Corruption changes abilities; healing can shorten damage windows.",
           "core": [
             "Soldier's Syringe",
@@ -4470,7 +4480,7 @@
           "priority": [
             {
               "name": "Soldier's Syringe",
-              "why": "Higher attack speed increases the number of direct hits you can land.",
+              "why": "More beam ticks per second during corruption; each tick has a 0.625 proc coefficient, so frequency compensates for the lower coefficient.",
               "target": "3–6+ as attack-speed budget allows."
             },
             {
@@ -4514,7 +4524,7 @@
         {
           "title": "Balanced void survivor",
           "style": "SURVIVAL",
-          "desc": "Favor durable item choices and controlled transitions.",
+          "desc": "Favor survivability and controlled-form healing. Use Suppress to trade Corruption for 25% max-health healing, and save transformation for dangerous targets.",
           "items": [
             "Paul's Goat Hoof",
             "Hopoo Feather",
@@ -4531,7 +4541,7 @@
             0,
             0
           ],
-          "how": "Build toward frequent transformed bursts with on-hit items.",
+          "how": "Use long-range Drown and Flood while controlled. Time Suppress for a safe 25% heal, and use Trespass to cleanse debuffs. Transform for burst only when it benefits you.",
           "risk": "Careful: healing choices and corruption interact with your rotation.",
           "core": [
             "Paul's Goat Hoof",
@@ -4585,9 +4595,9 @@
         {
           "title": "Corrupted burst engine",
           "style": "RISK / OFFENSE",
-          "desc": "Lean into the corrupted form for fast damage while carefully watching corruption.",
+          "desc": "Focus on faster Corruption gain and burst windows. Each Void item adds +2% minimum Corruption, while crits add Corruption according to proc coefficient.",
           "items": [
-            "Shaped Glass",
+            "Polylute",
             "Tougher Times",
             "Mocha",
             "Tri-Tip Dagger",
@@ -4602,8 +4612,8 @@
             "Trespass",
             "Suppress"
           ],
-          "how": "Build corruption, burn priority targets during the transformed window, then retreat.",
-          "risk": "Shaped Glass is extremely dangerous; do not stack it casually.",
+          "how": "Stack offensive Void items as you find them; prime Corruption before bosses, then hold the corrupted beam at a safe angle. Don’t assume constant passive healing helps maintain the beam.",
+          "risk": "Very aggressive Corruption-focused play is vulnerable when suppressed or when opponents stay outside 40m. Shaped Glass is high-risk and should not be a default beginner target.",
           "skillChoices": [
             0,
             0,
@@ -4611,15 +4621,15 @@
             0
           ],
           "core": [
-            "Shaped Glass",
+            "Polylute",
             "Tougher Times",
             "Mocha"
           ],
           "priority": [
             {
-              "name": "Shaped Glass",
-              "why": "Supports this build’s attack pattern, mobility or survival.",
-              "target": "1–2 copies initially; adjust to drops and synergy."
+              "name": "Polylute",
+              "why": "Void upgrade providing repeated hits on successful attacks and another Void item toward the Corruption floor.",
+              "target": "1–3; remember this corrupts Ukuleles."
             },
             {
               "name": "Tougher Times",
@@ -4755,9 +4765,9 @@
           "difficulty": "Easy"
         },
         {
-          "title": "Sojourn impact",
+          "title": "Soul Spiral impact",
           "style": "AGGRESSIVE",
-          "desc": "Use mobility and area attacks while stacking defense.",
+          "desc": "Use Soul Spiral to generate barrier from repeated hits; keep Sojourn available for repositioning and area pressure.",
           "items": [
             "Focus Crystal",
             "Repulsion Armor Plate",
@@ -4770,11 +4780,11 @@
           ],
           "skillChoices": [
             0,
+            1,
             0,
-            0,
-            0
+            1
           ],
-          "how": "Use Sojourn offensively to clear groups while maintaining protection.",
+          "how": "Maintain orbiting Soul Spiral hits for barrier; fly with Sojourn when safe, then disengage before your health is drained.",
           "risk": "Hard to control if you overextend.",
           "core": [
             "Focus Crystal",
@@ -4845,12 +4855,12 @@
             "Sojourn",
             "Meditate"
           ],
-          "how": "Stay near teammates for Meditate support and dive in with Sojourn when enemies group up.",
+          "how": "Use Reprieve for a safer barrier-oriented escape, then Meditate near allies when its timing is safe.",
           "risk": "Support power depends on teammates positioning together.",
           "skillChoices": [
             0,
             0,
-            0,
+            1,
             0
           ],
           "core": [
@@ -4908,13 +4918,16 @@
           "Spirit Punch"
         ],
         [
-          "Unseen Hand"
+          "Unseen Hand",
+          "Soul Spiral"
         ],
         [
-          "Sojourn"
+          "Sojourn",
+          "Reprieve"
         ],
         [
-          "Meditate"
+          "Meditate",
+          "Palm Blast"
         ]
       ]
     },
@@ -5014,7 +5027,7 @@
           "skillChoices": [
             0,
             0,
-            0,
+            1,
             0
           ],
           "how": "Use slow/control effects to keep enemies within high damage laser windows.",
@@ -5069,9 +5082,9 @@
           "difficulty": "Intermediate"
         },
         {
-          "title": "Lunar spike artillery",
+          "title": "Piercing Lunar Stakes",
           "style": "RANGED CONTROL",
-          "desc": "Fight from safer distances with Lunar Spikes and sustained laser pressure.",
+          "desc": "Use the alternate piercing Lunar Stakes to apply Lunar Ruin and trigger delayed lightning across lined-up enemies.",
           "items": [
             "Backup Magazine",
             "Soldier's Syringe",
@@ -5088,11 +5101,11 @@
             "Step of the Brothers",
             "Laser of the Father"
           ],
-          "how": "Throw spikes first, line up your laser on key targets, then reposition.",
+          "how": "Aim Lunar Stakes through groups, follow with Club swings and beam damage, and leverage Growth for more stake capacity.",
           "risk": "Positioning is important; do not overcommit with little mobility.",
           "skillChoices": [
             0,
-            0,
+            1,
             0,
             0
           ],
@@ -5151,10 +5164,12 @@
           "Club of the Forsaken"
         ],
         [
-          "Lunar Spikes"
+          "Lunar Spikes",
+          "Lunar Stakes"
         ],
         [
-          "Step of the Brothers"
+          "Step of the Brothers",
+          "Meridian's Will"
         ],
         [
           "Laser of the Father"
@@ -5241,9 +5256,9 @@
           "difficulty": "Easy"
         },
         {
-          "title": "Rapid cleaver combo",
+          "title": "Frost & cleaver combo",
           "style": "ON-HIT",
-          "desc": "Keep enemies debuffed with constant skill rotations.",
+          "desc": "Pair Ice Box with Yes, CHEF! for a frost-oriented chain: control targets before repeatedly piercing them with cleavers.",
           "items": [
             "Backup Magazine",
             "Tri-Tip Dagger",
@@ -5256,11 +5271,11 @@
           ],
           "skillChoices": [
             0,
+            1,
             0,
-            0,
-            0
+            1
           ],
-          "how": "Use rapid hits and procs for close combat damage.",
+          "how": "Throw and recall Dice through grouped targets; apply Ice Box to control enemies; use Yes, CHEF! to amplify your next skill.",
           "risk": "Avoid remaining in unsafe melee range.",
           "core": [
             "Backup Magazine",
@@ -5331,12 +5346,12 @@
             "Roll",
             "Glaze"
           ],
-          "how": "Cover enemies in burns, use Glaze to prepare a finish, and make chain kills spread through the pack.",
+          "how": "Use Oil Spill to coat a group, then Sear to ignite it; let burn amplifiers and Gasoline continue the chain reaction.",
           "risk": "Burn-focused setups depend on getting the right uncommon item.",
           "skillChoices": [
             0,
             0,
-            0,
+            1,
             0
           ],
           "core": [
@@ -5394,13 +5409,16 @@
           "Dice"
         ],
         [
-          "Sear"
+          "Sear",
+          "Ice Box"
         ],
         [
-          "Roll"
+          "Roll",
+          "Oil Spill"
         ],
         [
-          "Glaze"
+          "Glaze",
+          "Yes, CHEF!"
         ]
       ]
     },
