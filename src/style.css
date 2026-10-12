@@ -19,3 +19,44 @@
 /* Build-priority detail layer. Actual icons are remote wiki-derived imagery. */
 .roster-shortcuts{display:flex;gap:9px;flex-wrap:wrap;margin:16px 0 25px}.roster-shortcuts button{border:1px solid #31433e;border-radius:12px;background:#121b19;color:#b3c4bd;padding:7px 11px;display:flex;align-items:center;gap:8px;cursor:pointer;font-weight:700;font-size:12px}.roster-shortcuts button.active{border-color:#c6ed65;background:#293827;color:#e4ffb9}.roster-shortcuts .art{width:29px;height:29px;flex-shrink:0}.section-top.tight{margin:20px 0 12px}.preset-foot{display:flex;justify-content:space-between;align-items:center;margin-top:11px;gap:8px}.preset-foot em{font-size:10px;letter-spacing:.07em;font-style:normal;color:#eabf7b}.preset-foot b{font-size:10px;letter-spacing:.05em;color:#bad777}.skill-list{margin-bottom:17px}.build-skill-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;padding-top:12px;border-top:1px solid #2d3a36}.build-skill-summary>div{background:#101816;border:1px solid #2a3733;padding:12px;border-radius:9px;display:grid;gap:6px}.build-skill-summary span{font-size:10px;letter-spacing:.12em;color:#8fada1}.build-skill-summary b{font-size:12px;color:#e1eedb}.item-priority-list{display:grid;gap:8px;margin:22px 0}.priority-row{border:1px solid #34413d;border-radius:12px;background:#111a18;display:grid;grid-template-columns:35px 63px minmax(0,1fr) 70px;align-items:center;gap:10px;padding:13px}.priority-row.essential{border-color:#71894f;background:linear-gradient(90deg,#26341d,#15201b 47%)}.priority-rank{font-size:13px;color:#7d9187;font-weight:900}.priority-art{border:0;padding:0;background:transparent;cursor:pointer}.priority-art .art{width:56px;height:56px}.priority-description{min-width:0}.priority-title{display:flex;align-items:center;flex-wrap:wrap;gap:7px}.priority-title>b{font-size:14px;color:#f2faec}.priority-description p{margin:4px 0 5px;font-size:12px;line-height:1.5;color:#a5bcb2}.priority-description small{color:#e6c98b;font-size:11px;line-height:1.45}.core-label{background:#d4ee94;color:#1b321e;padding:3px 5px;border-radius:4px;font-weight:900;font-size:9px;letter-spacing:.04em}.rarity-mini{font-size:9px;color:#81988d;letter-spacing:.07em}.priority-add{border:1px solid #667e47;background:#26381f;color:#d9edac;border-radius:6px;padding:8px 4px;cursor:pointer;font-size:11px;font-weight:900}.priority-add:hover{background:#3c512d}.build-combo{font-size:17px;line-height:1.7;color:#e2f3d9;padding:18px 20px;background:#1b2d24;border-left:3px solid #c5f36a;border-radius:0 10px 10px 0}.strategy-columns{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0 23px}.strategy-columns>div{border-radius:10px;border:1px solid #32453a;padding:15px;background:#19291f}.strategy-columns b{font-size:10px;letter-spacing:.1em;color:#b8e988}.strategy-columns p{margin-bottom:0;font-size:12px;line-height:1.6;color:#c1d0c7}.strategy-columns .strategy-bad{background:#30221c;border-color:#665044}.strategy-columns .strategy-bad b{color:#ffc292}
 @media(max-width:650px){.priority-row{grid-template-columns:25px 47px minmax(0,1fr);gap:7px;padding:10px}.priority-art .art{width:44px;height:44px}.priority-add{grid-column:3;justify-self:start;min-width:76px}.priority-description p{font-size:11px}.strategy-columns{grid-template-columns:1fr}.roster-shortcuts{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px}.roster-shortcuts button{white-space:nowrap}}
+
+/* October 2026: visual-first full survivor roster and wiki-sourced skill loadouts */
+.all-survivor-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(126px,1fr));gap:9px;margin-top:14px}
+.survivor-pick{appearance:none;cursor:pointer;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;background:linear-gradient(180deg,#1d2c2b,#13201d);border:1px solid #354e44;border-radius:10px;min-height:137px;color:#e9f7e2;padding:12px 7px}
+.survivor-pick:hover{border-color:#b3dd78;background:#2a3b2d}.survivor-pick.active{border:2px solid #c7f66f;background:linear-gradient(145deg,#354a27,#172820);box-shadow:inset 0 0 18px #abf46313,0 0 0 1px #9bc35c33}
+.survivor-pick .art.pick-art{width:68px;height:68px;border:0;background:#31443966;border-radius:8px}
+.survivor-pick span:not(.art):not(.art-fallback){display:block;font-size:12px;font-weight:800;overflow-wrap:anywhere;line-height:1.15}
+.survivor-pick small{font-size:9px;line-height:1.3;max-width:100%;color:#91ada0;text-align:center}
+.survivor-pick.active small{color:#d0ed9e}
+.featured-survivor-banner{display:flex;align-items:center;gap:17px;margin-bottom:25px;padding:16px 20px;background:linear-gradient(96deg,#263a2a,#172524)}
+.featured-survivor-banner h2{font-size:34px;line-height:1.1;margin:3px 0}.featured-survivor-banner p{font-size:12px;margin:3px 0;color:#b7cfb6}.featured-survivor-banner small{font-size:12px;color:#aec3b6;line-height:1.5;display:block}
+.featured-survivor-art.art{width:88px;height:88px;border-radius:10px}
+.preset-art-title{font-size:9px;font-weight:900;color:#91b6a2;letter-spacing:1.2px;margin-top:13px;margin-bottom:5px}
+.preset-icons{display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.preset-icons .art.preset-art{width:35px;height:35px;border-radius:5px;border-color:#52715d}
+.skill-cards{display:grid;gap:16px}
+.skill-slot{min-width:0;background:#14221d;border:1px solid #35463e;border-radius:12px;padding:12px}
+.skill-slot-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:9px}
+.skill-slot-head strong{font-size:11px;letter-spacing:1.35px;color:#d5ef9a}
+.skill-slot-head span{font-size:9px;letter-spacing:.7px;color:#79998e}
+.skill-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:7px}
+.skill-option{position:relative;border:1px solid #344c42;border-radius:9px;background:#1b2928;display:flex;flex-direction:column;overflow:hidden}
+.skill-option.chosen{background:#30432d;border-color:#b9ee69;box-shadow:inset 3px 0 0 #d4ff82}
+.skill-option-main{appearance:none;display:flex;align-items:flex-start;text-align:left;gap:10px;cursor:pointer;width:100%;border:0;background:transparent;color:#e9f8e5;padding:10px 10px 5px;min-width:0}
+.skill-option-main:hover{background:#40553b45}
+.skill-option-body{min-width:0;flex:1;display:block;padding-top:3px}
+.skill-option-body b{font-size:13px;line-height:1.25;display:block;overflow-wrap:anywhere}
+.skill-option-body small{font-size:11px;line-height:1.45;display:block;color:#aac0b7;font-weight:400;margin-top:5px}
+.skill-option .art.ability-art{width:54px;height:54px;flex-shrink:0;border-radius:7px}
+.skill-check{color:#beec7d;font-size:18px;line-height:1.2;margin-left:3px}
+.skill-wiki{align-self:flex-end;font-size:9px;font-weight:900;padding:5px 12px 9px;letter-spacing:.8px;color:#accd93}
+.skill-wiki:hover{text-decoration:underline;color:#dfffad}
+.loadout-visual{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px;margin:15px 0 17px}
+.selected-skill{display:flex;align-items:center;gap:9px;padding:8px;background:#16251e;border:1px solid #3f5242;border-radius:8px;min-width:0}
+.selected-skill .art.selected-art{width:46px;height:46px;border-radius:5px}
+.selected-skill span:not(.art):not(.art-fallback){display:block;min-width:0}
+.selected-skill small{display:block;font-size:9px;color:#9eba96;letter-spacing:.8px}
+.selected-skill b{font-size:12px;color:#e5f5d4;line-height:1.35;display:block;overflow-wrap:anywhere}
+/* Skill cards replace the former text-only <select>. Full roster wraps instead of horizontally scrolling. */
+@media(max-width:900px){.all-survivor-grid{grid-template-columns:repeat(auto-fill,minmax(108px,1fr))}.survivor-pick{min-height:125px}.survivor-pick .art.pick-art{width:55px;height:55px}}
+@media(max-width:640px){.all-survivor-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.survivor-pick{padding:9px 3px;min-height:118px}.survivor-pick span:not(.art):not(.art-fallback){font-size:11px}.survivor-pick small{font-size:8px}.skill-options{grid-template-columns:1fr}.featured-survivor-banner{gap:10px;padding:12px}.featured-survivor-art.art{width:70px;height:70px}.featured-survivor-banner h2{font-size:27px}.build-presets{grid-template-columns:1fr}.preset-icons .art.preset-art{width:36px;height:36px}}

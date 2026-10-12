@@ -1,6 +1,7 @@
 import d from '../src/data/game.json' with {type:'json'};
 import {readFileSync} from 'node:fs';
 import {extra} from '../src/data/extra.js';
+import {skillNotes} from '../src/data/skill-notes.js';
 const assert=(condition,message)=>{if(!condition)throw Error(message)};
 for(const key of ['items','survivors','hallowed','hexes','pages'])assert(Array.isArray(d[key]),`Missing ${key}`);
 assert(d.survivors.length===21,'Expected 20 regular survivors + Heretic');
@@ -20,5 +21,11 @@ for (const s of d.survivors) {
  }
 }
 assert(count>=65,'Expected 65 editorial build paths');
+const uniqueSkills=new Set(d.survivors.flatMap(s=>s.skills.flat()));
+for(const name of uniqueSkills)assert(typeof skillNotes[name]==='string'&&skillNotes[name].length>12,`Missing ability explanation: ${name}`);
+const client=readFileSync('src/app.js','utf8');
+assert(client.includes('all-survivor-grid') && client.includes('skill-option-main'), 'Full survivor roster / visual ability cards missing');
+assert(!client.includes('id=\"build-survivor\"'), 'Survivor dropdown unexpectedly present');
+assert(!client.includes('const RAW'), 'Wiki-only asset source expected');
 assert(readFileSync('src/app.js','utf8').includes('imageSources'),'Missing real image source logic');
 console.log(`Validated ${d.survivors.length} survivors and ${count} build paths; ${d.items.length} curated base items, ${d.hallowed.length} Hallowed, ${d.hexes.length} Hex, ${d.pages.length} rituals.`);

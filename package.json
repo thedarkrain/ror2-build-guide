@@ -8,6 +8,7 @@
     "dev": "node scripts/dev.mjs",
     "build": "node scripts/build.mjs",
     "preview": "node scripts/dev.mjs dist",
+    "assets:sync": "node scripts/sync-wiki-art.mjs",
     "check": "node scripts/check.mjs",
     "smoke": "node scripts/smoke.mjs"
   },
